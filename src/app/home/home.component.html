@@ -1,0 +1,31 @@
+<div class="container">
+<h1 class="text-center">View Products</h1>
+
+    <hr>
+
+    <div class="row">
+
+    <div class="card col-10 col-sm-5 col-md-4 col-lg-4 mx-auto mb-3" *ngFor="let product of allProducts;let i=index">
+
+        <img src="{{allProducts[i]?.productImage}}" width="10vw" height="300vw" class="card-img-top" alt="...">
+
+        <div class="card-body">
+
+          <h5 class="card-title fw-bold">{{allProducts[i]?.productName}}</h5>
+
+          <h6 class="card-title">Price: {{allProducts[i]?.price}}$</h6>
+
+          <p class="card-text">Description: {{allProducts[i]?.description}}</p>
+
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+          <button type="submit" class="btn btn-sm float-start" style="background-color: #f05353;">Buy <i class="fa-solid fa-basket-shopping"></i></button>
+
+          <button type="submit" class="btn btn-sm float-end" style="background-color: #80bd63;">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+
+        </div>
+
+    </div>
+
+    </div>
+</div>

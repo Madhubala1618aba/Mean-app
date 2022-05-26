@@ -1,0 +1,44 @@
+<div class="container">
+
+    <h6 class="container text-end">Welcome <span class="text-success">{{user?.username}}</span>
+<img src={{user?.profilePic}} class="float-end" width="50px" alt="" style="border-radius: 50%;"></h6>
+
+<!-- <button class="btn btn-success mt-5 d-block mx-auto" (click)="getPrivateData()">Get ProtectedData</button> -->
+<button type="submit" class="btn btn-sm float-end m-2" style="background-color: #80bd63;"
+(click)="viewcart(user?.username)">view Cart <i class="fa-solid fa-cart-shopping"></i>
+{{cartCount}}</button>
+
+<div class="container">
+    <h1 class="text-center">View Products <i class="fa-solid fa-eye"></i></h1>
+    
+        <hr>
+    
+        <div class="row">
+    
+        <div class="card col-10 col-sm-5 col-md-4 col-lg-4 mx-auto mb-3" *ngFor="let product of allProducts;let i=index">
+    
+            <img src="{{product?.productImage}}" width="10vw" height="300vw" class="card-img-top" alt="...">
+    
+            <div class="card-body">
+    
+              <h5 class="card-title fw-bold">{{product?.productName}}</h5>
+    
+              <h6 class="card-title">Price: {{product?.price}}$</h6>
+    
+              <p class="card-text">Description: {{product?.description}}</p>
+    
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    
+              <button type="submit" class="btn btn-sm float-start" style="background-color: #f05353;">Buy <i class="fa-solid fa-basket-shopping"></i></button>
+    
+              <button type="submit" class="btn btn-sm float-end" style="background-color: #80bd63;"
+              (click)="Addcart(user?.username,product)">Add to Cart <i class="fa-solid fa-cart-plus"></i></button>
+    
+            </div>
+    
+        </div>
+    
+        </div>
+    </div>
+
+</div>
